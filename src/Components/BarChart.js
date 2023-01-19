@@ -1,4 +1,5 @@
 import React from 'react';
+
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -31,11 +32,14 @@ function BarChart() {
          responsive: true,         
         plugins: {
           legend: {
-            position: "bottom",            
+            display: true,
+            position: "bottom",
+            verticalAlignment:"bottom",   
           },
           title: {
             display: true,
-            text: 'Gas Performance',
+            text: 'Actual',
+            position: 'top',
           },
         },
        };
@@ -59,6 +63,7 @@ function BarChart() {
           },   
           {
             type: 'line',
+            label: 'Baseline',
             label: '$ Baseline Cost',
             data:[18,18,15,12,18,17],
             backgroundColor: 'rgb(152, 123, 63)',                
@@ -98,8 +103,10 @@ function BarChart() {
     };
   return (
     <>
-    <div style={{width:"980px", margin:"auto"}}>    
-  <Chart type='bar' data={data} />
+    <div style={{width:"980px", margin:"auto"}}> 
+    <h4 style={{ textAlign: "left" , width:"980px"}}>Gas Performance</h4>   
+  <Chart options={options} type='bar' data={data}>
+  </Chart>
   </div>
   </>
   );

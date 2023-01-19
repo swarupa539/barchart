@@ -14,8 +14,8 @@ function App() {
       .catch((err) => console.log(err));
   }, []);
   return (
-    <div className="App" style={{conten:'left'}}>
-      <h4>Gas Performance</h4>
+    <div className="App">
+      {/* <h4>Gas Performance</h4> */}
       <BarChart
         // labels={data.length === 0 ? ["pink"] : data[0].labels}
         // data1={data.length === 0 ? [0, 0, 0, 0, 0, 0] : data[0].data[0].values}
